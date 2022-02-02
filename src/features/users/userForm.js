@@ -23,7 +23,7 @@ export function UserForm(props) {
         const target = event.target;
         const name = target.name;
         user[name] = target.value;
-        console.log(user);
+
     };
     const addUser = () => {
         if (Object.keys(selectedUser).length === 0 ) {
@@ -40,13 +40,13 @@ export function UserForm(props) {
 
             if (handleValidation()) {
                 var users =[ ...props.userList]
-                console.log('preu', users)
+
 
                 var index = users.findIndex(x=> x.id === selectedUser.id);
                 users = users.filter(x => x.id !== selectedUser.id);
                 users[index] = Object.assign({},selectedUser, user);
 
-                console.log('les utilisateur', users)
+
                 props.setUserList([...props.userList, users]);
                 props.setShowUsers(true);
 

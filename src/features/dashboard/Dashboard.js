@@ -7,7 +7,7 @@ import {fetchUsers} from "../../store/actions/usersActions";
 
 export function Dashboard() {
 
-    const {users, loading} = useSelector(state => state.users);
+    const {users} = useSelector(state => state.users);
 
     const [userList, setUserList] = useState(users);
     const [user, setUser] = useState({});
@@ -16,7 +16,6 @@ export function Dashboard() {
     useEffect(
         () => {
             dispatch(fetchUsers());
-
         }, [dispatch]
     )
 
